@@ -36,19 +36,19 @@ instructions: instruction
  | instruction union instructions
 ;
 
-union: AND
- | THEN
- | AND THEN
- | COMMA
+union: COMMA AND THEN 
  | COMMA AND
  | COMMA THEN
- | COMMA AND THEN
+ | COMMA
+ | AND THEN
+ | THEN
+ | AND
 
 
-instruction: MOVE_ACTION lenght MOVE_UNIT MOVE_ADVERB     { printf("MOVE %d", $2); }
-    | MOVE_ACTION lenght MOVE_UNIT                      { printf("MOVE %d", $2); }
-    | TURN_ACTION lenght TURN_UNIT TURN_ADVERB          { printf("TURN %d ", $2); }
-    | TURN_ACTION lenght TURN_UNIT                      { printf("TURN %d ", $2); }
+instruction: MOVE_ACTION lenght MOVE_UNIT MOVE_ADVERB     { printf("MOVE %d\n", $2); }
+    | MOVE_ACTION lenght MOVE_UNIT                      { printf("MOVE %d\n", $2); }
+    | TURN_ACTION lenght TURN_UNIT TURN_ADVERB          { printf("TURN %d\n", $2); }
+    | TURN_ACTION lenght TURN_UNIT                      { printf("TURN %d\n", $2); }
 ;
 
 lenght: NUMBER { $$ = $1; }

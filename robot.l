@@ -16,8 +16,8 @@ and          { return AND; }
 then         { return THEN; }
 
 
-[0-9]    {  yylval = atoi(yytext);; return NUMBER; }
-(90|180|270|360)    {  yylval = atoi(yytext);; return DEGREES; }
+[0-9]    {  yylval = atoi(yytext); return NUMBER; }
+(90|180|270|360)    {  yylval = atoi(yytext); return DEGREES; }
 
 move |
 advance |
@@ -48,3 +48,7 @@ clockwise {return TURN_ADVERB;}
 [\n]  ; 		{return EOL;}
 . return yytext[0];
 %%
+
+int yywrap() {
+    return 1;
+}
