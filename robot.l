@@ -1,14 +1,50 @@
 %{
 #include "y.tab.h"
+extern YYSTYPE yylval;
+
+#include <string.h>
 %}
+
 %%
-"and"|"and then"|","|",and"|",then"|",and then"			 return UNION; 
-"move"|"advance"|"travel"|"go"|"proceed"				 return MOVE_ACTION; 
-"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"		 return NUMBER; 
-"turn"|"rotate"|"spin"|"pivot"|"twist"|"shift" 	 return TURN_ACTION; 
-"90 degrees"|"180 degrees"|"270 degrees"|"360 degrees" return TURN_PARAMETER;
+Robot {return SUBJECT;}
+
+please |
+kindly {return POLITE_WORD;}
+
+,            { return COMMA; }
+and          { return AND; }
+then         { return THEN; }
+
+
+[0-9]    {  yylval = atoi(yytext);; return NUMBER; }
+(90|180|270|360)    {  yylval = atoi(yytext);; return DEGREES; }
+
+move |
+advance |
+travel |
+go |
+proceed				{ return MOVE_ACTION; }
+
+turn |
+rotate |
+spin |
+pivot |
+twist |
+shift 	{return TURN_ACTION; }
+
+blocks |
+steps {return MOVE_UNIT;}
+
+degrees {return TURN_UNIT;}
+
+ahead |
+forward {return MOVE_ADVERB;}
+
+"to the right" |
+right |
+clockwise {return TURN_ADVERB;}
 
 [ \t] ; 			/* ignore whitespace */
-[\n]  ; 		return EOL;
+[\n]  ; 		{return EOL;}
 . return yytext[0];
 %%

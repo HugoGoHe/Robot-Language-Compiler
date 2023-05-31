@@ -7,23 +7,52 @@ void yyerror(const char *s);
 extern FILE *yyin;
 %}
 
-%token UNION MOVE_ACTION MOVE_PARAMETER TURN_ACTION TURN_PARAMETER EOL
+%token SUBJECT
+POLITE_WORD
+COMMA
+AND
+THEN
+NUMBER
+DEGREES
+MOVE_ACTION
+TURN_ACTION
+MOVE_UNIT
+TURN_UNIT
+MOVE_ADVERB
+TURN_ADVERB
+EOL
 %%
 
-sentences: sentence                  {printf("PASS\n");}
+sentences: sentence                 
  | sentences EOL sentences
  | sentences EOL
  ;
 
-sentence: subject polite_word instructions	
-        | polite_word subject instructions
+sentence: SUBJECT POLITE_WORD instructions	
+        | POLITE_WORD SUBJECT instructions
 ;
 
-instructions: instruction union instructions
- | instruction
+instructions: instruction 
+ | instruction union instructions
 ;
-instruction: MOVE_ACTION MOVE_PARAMETER     { printf("MOVE %d ", $2); }
-    | TURN_ACTION TURN_PARAMETER            { printf("TURN %d ", $2); }
+
+union: AND
+ | THEN
+ | AND THEN
+ | COMMA
+ | COMMA AND
+ | COMMA THEN
+ | COMMA AND THEN
+
+
+instruction: MOVE_ACTION lenght MOVE_UNIT MOVE_ADVERB     { printf("MOVE %d", $2); }
+    | MOVE_ACTION lenght MOVE_UNIT                      { printf("MOVE %d", $2); }
+    | TURN_ACTION lenght TURN_UNIT TURN_ADVERB          { printf("TURN %d ", $2); }
+    | TURN_ACTION lenght TURN_UNIT                      { printf("TURN %d ", $2); }
+;
+
+lenght: NUMBER { $$ = $1; }
+    | DEGREES { $$ = $1; }
 ;
 
 %%
