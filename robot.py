@@ -40,34 +40,33 @@ def draw_grid():
         robot.goto(0.5, 0.5)
 
 def move_foward(steps):
-    if not hit_wall(steps):
-        robot.forward(steps)
+    if off_the_grid(steps):
+        print("Off the grid")
+    robot.forward(steps)
+    
+        
 
 def turn_right(degrees):
     global direction 
-    direction =  direction %4 + 1
+    direction =  (direction + degrees//90)%4
     robot.right(degrees)
+    print(direction)
 
 # Function that stops the robot if it hits a wall
-def hit_wall(steps):
+def off_the_grid(steps):
     if direction == 0:
-        if robot.ycor() + steps >= 10:
-            print("hit wall")
-            return True
+        if robot.xcor() + steps < 10:
+            return False
     elif direction == 1:
-        if robot.xcor() + steps >= 10:
-            print("hit wall")
-            return True
+        if robot.ycor() + steps > 0:
+            return False
     elif direction == 2:
-        if robot.ycor() + steps <= 0:
-            print("hit wall")
-            return True
+        if robot.xcor() + steps > 0:
+            return False
     elif direction == 3:
-        if robot.xcor() + steps <= 0:
-            print("hit wall")
-            return True 
-
-    return False
+        if robot.ycor() + steps < 10:
+            return False 
+    return True
 
 def lex_and_yacc():
     os.system("yacc -d robot.y")
@@ -81,6 +80,7 @@ def instructions():
     for line in read_file:
         print(line)
         actions[line[0:4]](int(line[5:]))
+    read_file.close()
 
 def main():
 
@@ -92,13 +92,12 @@ def main():
 
     # Call the draw_grid function to draw the grid
     draw_grid()
-    robot.speed(4)  
+    robot.speed(2)  
 
 
     instructions()
 
-    print(robot.xcor())
-    print(robot.ycor())
+    print(robot.xcor(), robot.ycor())
 
     # Exit on click
     turtle.exitonclick()
@@ -107,6 +106,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-### Falta hacer bien hitwall para que verifique si las coordenadas más lo que se va a mover
-### es mayor a 10 o menor a 0

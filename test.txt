@@ -1,1 +1,2 @@
 Robot kindly turn 270 degrees and then move 7 steps, and then turn 90 degrees to the right
+Robot please move 9 steps 
