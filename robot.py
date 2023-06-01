@@ -70,11 +70,18 @@ def lex_and_yacc():
     os.system("cc lex.yy.c y.tab.c -o robot.exe")
     os.system("./robot.exe " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
 
+def read_file():
+    read_file = open(OUTPUT_FILE_PATH, "r")
+    for line in read_file:
+        print(line)
+
 def main():
     
     # Compile lex and yacc and get output file
     lex_and_yacc()
 
+    read_file()
+    
     # Call the draw_grid function to draw the grid
     draw_grid()
 
