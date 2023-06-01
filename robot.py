@@ -51,17 +51,22 @@ def turn_right(degrees):
 # Function that stops the robot if it hits a wall
 def hit_wall(steps):
     if direction == 0:
-        if robot.ycor() + steps == 10:
+        if robot.ycor() + steps >= 10:
+            print("hit wall")
             return True
     elif direction == 1:
-        if robot.xcor() + steps == 10:
+        if robot.xcor() + steps >= 10:
+            print("hit wall")
             return True
     elif direction == 2:
-        if robot.ycor() + steps == 0:
+        if robot.ycor() + steps <= 0:
+            print("hit wall")
             return True
     elif direction == 3:
-        if robot.xcor() + steps == 0:
+        if robot.xcor() + steps <= 0:
+            print("hit wall")
             return True 
+
     return False
 
 def lex_and_yacc():
@@ -70,34 +75,30 @@ def lex_and_yacc():
     os.system("cc lex.yy.c y.tab.c -o robot.exe")
     os.system("./robot.exe " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
 
-def read_file():
+def instructions():
+    actions = {"MOVE": move_foward, "TURN": turn_right}
     read_file = open(OUTPUT_FILE_PATH, "r")
     for line in read_file:
         print(line)
+        actions[line[0:4]](int(line[5:]))
 
 def main():
+
+
     
     # Compile lex and yacc and get output file
     lex_and_yacc()
 
-    read_file()
-    
+
     # Call the draw_grid function to draw the grid
     draw_grid()
-
     robot.speed(4)  
+
+
+    instructions()
 
     print(robot.xcor())
     print(robot.ycor())
-
-    print("hola")
-
-    
-    move_foward(6)
-    turn_right(270)
-
-
-    move_foward(6)
 
     # Exit on click
     turtle.exitonclick()
