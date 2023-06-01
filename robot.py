@@ -1,4 +1,8 @@
 import turtle
+import os
+
+INPUT_FILE_PATH = "input.txt"
+OUTPUT_FILE_PATH = "output.txt"
 
 # Create a turtle screen
 screen = turtle.Screen()
@@ -20,7 +24,6 @@ robot.pensize(1)
 robot.shape("turtle")
 robot.color("green")
 
-# Function to draw a grid
 def draw_grid():
     for x in range(11):
         robot.penup()
@@ -37,54 +40,58 @@ def draw_grid():
         robot.goto(0.5, 0.5)
 
 def move_foward(steps):
-    robot.forward(steps)
+    if not hit_wall(steps):
+        robot.forward(steps)
 
-def turn_right():
+def turn_right(degrees):
     global direction 
     direction =  direction %4 + 1
-    robot.right(90)
+    robot.right(degrees)
 
 # Function that stops the robot if it hits a wall
-def hit_wall():
+def hit_wall(steps):
     if direction == 0:
-        if robot.ycor() == 10:
+        if robot.ycor() + steps == 10:
             return True
     elif direction == 1:
-        if robot.xcor() == 10:
+        if robot.xcor() + steps == 10:
             return True
     elif direction == 2:
-        if robot.ycor() == 0:
+        if robot.ycor() + steps == 0:
             return True
     elif direction == 3:
-        if robot.xcor() == 0:
-            return True
-    
+        if robot.xcor() + steps == 0:
+            return True 
     return False
 
 
 
 def main():
+
+    os.system("yacc -d robot.y")
+    os.system("lex robot.l")
+    os.system("cc lex.yy.c y.tab.c -o robot.exe")
+    os.system("./build/compiler " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
     
     # Call the draw_grid function to draw the grid
     draw_grid()
 
-    robot.speed(4)
+    robot.speed(4)  
 
     print(robot.xcor())
     print(robot.ycor())
-    if not hit_wall():
-        print("hola")
+
+    print("hola")
 
     
-    if not hit_wall():
-        move_foward(6)
-    turn_right()
+    move_foward(6)
+    turn_right(270)
 
-    if not hit_wall():
-        move_foward(6)
+
+    move_foward(6)
 
     # Exit on click
-    # turtle.exitonclick()
+    turtle.exitonclick()
 
 
 
