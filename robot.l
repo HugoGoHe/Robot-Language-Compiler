@@ -6,7 +6,9 @@ extern YYSTYPE yylval;
 %}
 
 %%
-Robot {return SUBJECT;}
+Robot |
+Rob |
+Turtle {return SUBJECT;}
 
 please |
 kindly {return POLITE_WORD;}
@@ -33,16 +35,28 @@ twist |
 shift 	{return TURN_ACTION; }
 
 blocks |
-steps {return MOVE_UNIT;}
+block |
+steps |
+step |
+units |
+unit |
+paces |
+pace |
+strides |
+stride {return MOVE_UNIT;}
 
 degrees {return TURN_UNIT;}
 
 ahead |
-forward {return MOVE_ADVERB;}
+forward |
+onward |
+straight {return MOVE_ADVERB;}
 
 "to the right" |
 right |
-clockwise {return TURN_ADVERB;}
+clockwise |
+"to the east" |
+"toward the right" {return TURN_ADVERB;}
 
 [ \t] ; 			/* ignore whitespace */
 [\n]  ; 		{return EOL;}
