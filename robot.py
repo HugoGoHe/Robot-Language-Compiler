@@ -1,7 +1,7 @@
 import turtle
 import os
 
-INPUT_FILE_PATH = "input.txt"
+INPUT_FILE_PATH = "test.txt"
 OUTPUT_FILE_PATH = "output.txt"
 
 # Create a turtle screen
@@ -64,15 +64,17 @@ def hit_wall(steps):
             return True 
     return False
 
-
-
-def main():
-
+def lex_and_yacc():
     os.system("yacc -d robot.y")
     os.system("lex robot.l")
     os.system("cc lex.yy.c y.tab.c -o robot.exe")
-    os.system("./build/compiler " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
+    os.system("./robot.exe " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
+
+def main():
     
+    # Compile lex and yacc and get output file
+    lex_and_yacc()
+
     # Call the draw_grid function to draw the grid
     draw_grid()
 
