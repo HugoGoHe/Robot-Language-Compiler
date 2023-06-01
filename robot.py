@@ -16,11 +16,8 @@ direction = 0   # 0 = North, 1 = East, 2 = South, 3 = West
 
 # Create a turtle object
 robot = turtle.Turtle()
-
-# Set the turtle's speed and pen size
 robot.speed(0)
 robot.pensize(1)
-
 robot.shape("turtle")
 robot.color("green")
 
@@ -44,15 +41,11 @@ def move_foward(steps):
         print("Off the grid")
     robot.forward(steps)
     
-        
-
 def turn_right(degrees):
     global direction 
     direction =  (direction + degrees//90)%4
     robot.right(degrees)
-    print(direction)
 
-# Function that stops the robot if it hits a wall
 def off_the_grid(steps):
     if direction == 0:
         if robot.xcor() + steps < 10:
@@ -83,26 +76,14 @@ def instructions():
     read_file.close()
 
 def main():
-
-
-    
     # Compile lex and yacc and get output file
     lex_and_yacc()
-
-
     # Call the draw_grid function to draw the grid
     draw_grid()
     robot.speed(2)  
-
-
     instructions()
-
-    print(robot.xcor(), robot.ycor())
-
     # Exit on click
     turtle.exitonclick()
-
-
 
 if __name__ == "__main__":
     main()
