@@ -37,9 +37,10 @@ def draw_grid():
         robot.goto(0.5, 0.5)
 
 def move_foward(steps):
-    if off_the_grid(steps):
-        print("Off the grid")
+    print(robot.xcor(), robot.ycor())
     robot.forward(steps)
+    if off_the_grid(0):
+        print("Off the grid")
     
 def turn_right(degrees):
     global direction 
@@ -82,6 +83,7 @@ def main():
     draw_grid()
     robot.speed(2)  
     instructions()
+    print(robot.xcor(), robot.ycor())
     # Exit on click
     turtle.exitonclick()
 
