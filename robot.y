@@ -45,10 +45,10 @@ union: COMMA AND THEN
  | AND
 
 
-instruction: MOVE_ACTION lenght MOVE_UNIT MOVE_ADVERB     { printf("MOVE %d,\n", $2); }
-    | MOVE_ACTION lenght MOVE_UNIT                      { printf("MOVE %d,\n", $2); }
-    | TURN_ACTION lenght TURN_UNIT TURN_ADVERB          { printf("TURN %d,\n", $2); }
-    | TURN_ACTION lenght TURN_UNIT                      { printf("TURN %d,\n", $2); }
+instruction: MOVE_ACTION lenght MOVE_UNIT MOVE_ADVERB     { printf("MOV,%d\n", $2); }
+    | MOVE_ACTION lenght MOVE_UNIT                      { printf("MOV,%d\n", $2); }
+    | TURN_ACTION lenght TURN_UNIT TURN_ADVERB          { printf("TURN,%d\n", $2); }
+    | TURN_ACTION lenght TURN_UNIT                      { printf("TURN,%d\n", $2); }
 ;
 
 lenght: NUMBER { $$ = $1; }

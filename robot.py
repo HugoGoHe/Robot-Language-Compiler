@@ -73,9 +73,9 @@ def instructions():
     read_file = open(OUTPUT_FILE_PATH, "r")
     for line in read_file:
         if line[0] == "M":
-            actions[line[0:3]](int(line[4:-2]))
+            actions[line[0:3]](int(line[4:-1]))
         elif line[0] == "T":
-            actions[line[0:4]](int(line[5:-2]))
+            actions[line[0:4]](int(line[5:-1]))
         print(line)
     read_file.close()
 
