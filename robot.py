@@ -2,7 +2,7 @@ import turtle
 import os
 
 INPUT_FILE_PATH = "test.txt"
-OUTPUT_FILE_PATH = "output.txt"
+OUTPUT_FILE_PATH = "output.asm"
 
 # Create a turtle screen
 screen = turtle.Screen()
@@ -43,7 +43,7 @@ def move_foward(steps):
         print("Off the grid")
     
 def turn_right(degrees):
-    global direction 
+    global direction   
     direction =  (direction + degrees//90)%4
     robot.right(degrees)
 
