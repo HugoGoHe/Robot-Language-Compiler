@@ -69,11 +69,14 @@ def lex_and_yacc():
     os.system("./robot.exe " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
 
 def instructions():
-    actions = {"MOVE": move_foward, "TURN": turn_right}
+    actions = {"MOV": move_foward, "TURN": turn_right}
     read_file = open(OUTPUT_FILE_PATH, "r")
     for line in read_file:
+        if line[0] == "M":
+            actions[line[0:3]](int(line[4:-2]))
+        elif line[0] == "T":
+            actions[line[0:4]](int(line[5:-2]))
         print(line)
-        actions[line[0:4]](int(line[5:-2]))
     read_file.close()
 
 def main():
