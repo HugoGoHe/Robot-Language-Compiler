@@ -73,7 +73,7 @@ def instructions():
     read_file = open(OUTPUT_FILE_PATH, "r")
     for line in read_file:
         print(line)
-        actions[line[0:4]](int(line[5:]))
+        actions[line[0:4]](int(line[5:-2]))
     read_file.close()
 
 def main():
