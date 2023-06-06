@@ -22,6 +22,8 @@ The programming language used to control the robot must be polite and follow cer
     "Robot, please move 2 blocks ahead."
     "Robot, please move 3 blocks ahead and then turn 90 degrees. Then, move 2 blocks."
     "Robot, kindly turn 90 degrees and then move 2 steps, and then turn 270 degrees to the right."
+    "Robot, please move 3 blocks ahead, then turn 180 degrees to the right, and finally move 2 steps."
+    "Please kindly turn 270 degrees to the right, then move 5 blocks ahead and turn 90 degrees."
 
 ### Examples of invalid sentences:
 
@@ -30,6 +32,8 @@ The programming language used to control the robot must be polite and follow cer
     "Move 2 blocks right now."
     "Robot 2 blocks moves."
     "Moves Robot 2 blocks and turn 89 degrees."
+    "Move 2 blocks ahead, then turn 90 degrees."
+    "Robot, please move 2 blocks quickly and then turn."
 
 ## Grammar
 
