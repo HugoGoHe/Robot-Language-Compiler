@@ -56,10 +56,17 @@ Below is the grammar used in the robot programming language:
 ```<UNION>         ::= COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
 
 ```<NUMBER>        ::= 1|2|3|4|5|6|7|8|9```
+
 ```<DEGREES>       ::= 90|180|270|360```
+
 ```<MOVE_ACTION>   ::= move | advance | travel | go | proceed```
+
 ```<TURN_ACTION>   ::= turn | rotate | spin | pivot | twist | shift```
+
 ```<MOVE_UNIT>     ::= blocks | steps```
+
 ```<TURN_UNIT>     ::= degrees```
+
 ```<MOVE_ADVERB>   ::= ahead```
+
 ```<TURN_ADVERB>   ::= to the right | clockwise```
