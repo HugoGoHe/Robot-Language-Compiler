@@ -35,22 +35,22 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-```<SENTENCES> => <SENTENCE> <SENTENCES> | <SENTENCE>```
-```<SENTENCE> => <SUBJECT> <POLITE WORD> <INSTRUCTIONS> | <POLITE WORD> <SUBJECT> <INSTRUCTIONS>```
-```<INSTRUCTIONS> => <INSTRUCTION> | <INSTRUCTION> <UNION> <INSTRUCTIONS>```
-```<INSTRUCTION> => <MOVE_ACTION> <NUMBER> <MOVE_UNIT> <MOVE_ADVERB> | <TURN_ACTION> <DEGREES><TURN_UNIT> <TURN_ADVERB> | <MOVE_ACTION> <NUMBER> <MOVE_UNIT> | <TURN_ACTION> <DEGREES><TURN_UNIT>```
-```<SUBJECT> => Robot```
-```<POLITE WORD> => please```
-```<COMMA> => ,```
-```<AND> => and```
-```<THEN> => then```
-```<UNION> => COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
-```<NUMBER> => 1|2|3|4|5|6|7|8|9```
-```<DEGREES> => 90|180|270|360```
-```<MOVE_ACTION> => move | advance | travel | go | proceed```
-```<TURN_ACTION> => turn | rotate | spin | pivot | twist | shift```
-```<MOVE_UNIT> => blocks | steps```
-```<TURN_UNIT> => degrees```
-```<MOVE_ADVERB> => ahead```
-```<TURN_ADVERB> => to the right | clockwise```
+```<SENTENCES>     ::= <SENTENCE> <SENTENCES> | <SENTENCE>```
+```<SENTENCE>      ::= <SUBJECT> <POLITE WORD> <INSTRUCTIONS> | <POLITE WORD> <SUBJECT> <INSTRUCTIONS>```
+```<INSTRUCTIONS>  ::= <INSTRUCTION> | <INSTRUCTION> <UNION> <INSTRUCTIONS>```
+```<INSTRUCTION>   ::= <MOVE_ACTION> <NUMBER> <MOVE_UNIT> <MOVE_ADVERB> | <TURN_ACTION> <DEGREES> <TURN_UNIT> <TURN_ADVERB> | <MOVE_ACTION> <NUMBER> <MOVE_UNIT> | <TURN_ACTION> <DEGREES> <TURN_UNIT>```
+```<SUBJECT>       ::= Robot```
+```<POLITE WORD>   ::= please```
+```<COMMA>         ::= ,```
+```<AND>           ::= and```
+```<THEN>          ::= then```
+```<UNION>         ::= COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
+```<NUMBER>        ::= 1|2|3|4|5|6|7|8|9```
+```<DEGREES>       ::= 90|180|270|360```
+```<MOVE_ACTION>   ::= move | advance | travel | go | proceed```
+```<TURN_ACTION>   ::= turn | rotate | spin | pivot | twist | shift```
+```<MOVE_UNIT>     ::= blocks | steps```
+```<TURN_UNIT>     ::= degrees```
+```<MOVE_ADVERB>   ::= ahead```
+```<TURN_ADVERB>   ::= to the right | clockwise```
 
