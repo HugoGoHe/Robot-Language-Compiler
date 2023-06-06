@@ -35,7 +35,7 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-<SENTENCES> => <SENTENCE> <SENTENCES> | <SENTENCE>
+´<SENTENCES> => <SENTENCE> <SENTENCES> | <SENTENCE>
 <SENTENCE> => <SUBJECT> <POLITE WORD> <INSTRUCTIONS> | <POLITE WORD> <SUBJECT> <INSTRUCTIONS>
 <INSTRUCTIONS> => <INSTRUCTION> | <INSTRUCTION> <UNION> <INSTRUCTIONS>
 <INSTRUCTION> => <MOVE_ACTION> <NUMBER> <MOVE_UNIT> <MOVE_ADVERB> | <TURN_ACTION> <DEGREES><TURN_UNIT> <TURN_ADVERB> | <MOVE_ACTION> <NUMBER> <MOVE_UNIT> | <TURN_ACTION> <DEGREES><TURN_UNIT>
@@ -52,4 +52,4 @@ Below is the grammar used in the robot programming language:
 <MOVE_UNIT> => blocks | steps
 <TURN_UNIT> => degrees
 <MOVE_ADVERB> => ahead
-<TURN_ADVERB> => to the right | clockwise
+<TURN_ADVERB> => to the right | clockwise´
