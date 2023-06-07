@@ -77,3 +77,5 @@ Below is the grammar used in the robot programming language:
 
 ## Model
 ![Gif de gráfica de Python](graph.gif)
+<img src="ruta_del_gif.gif" alt="Gif de gráfica de Python" width="300">
+
