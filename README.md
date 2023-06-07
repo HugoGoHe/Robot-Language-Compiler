@@ -75,6 +75,6 @@ Below is the grammar used in the robot programming language:
 
 ```<TURN_ADVERB>   ::= to the right | clockwise```
 
-## Usage
+## Model
 
-![Gif de gráfica de python](./graph.py)
+![Gif de gráfica de Python](graph.gif)
