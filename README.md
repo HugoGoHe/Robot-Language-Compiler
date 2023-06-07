@@ -74,3 +74,16 @@ Below is the grammar used in the robot programming language:
 ```<MOVE_ADVERB>   ::= ahead```
 
 ```<TURN_ADVERB>   ::= to the right | clockwise```
+
+## Usage
+import turtle
+import os
+
+# Rest of your Python code...
+
+# Example code to move the turtle
+turtle.forward(100)
+turtle.right(90)
+turtle.forward(100)
+turtle.done()
+
