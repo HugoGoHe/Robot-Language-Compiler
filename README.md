@@ -77,21 +77,19 @@ Below is the grammar used in the robot programming language:
 
 ## Usage
 
-import turtle
-import os
+```import turtle```
+```import os```
 
-INPUT_FILE_PATH = "test.txt"
-OUTPUT_FILE_PATH = "output.asm"
+```INPUT_FILE_PATH = "test.txt"```
+```OUTPUT_FILE_PATH = "output.asm"```
 
-Create a turtle screen
-screen = turtle.Screen()
+```Create a turtle screen```
+```screen = turtle.Screen()```
 
-Set up the screen size and coordinates
-screen.setup(width=600, height=600)
-screen.setworldcoordinates(0, 0, 10, 10)
+```screen.setup(width=600, height=600)```
+```screen.setworldcoordinates(0, 0, 10, 10)```
 
-Control variables
-direction = 0   # 0 = North, 1 = East, 2 = South, 3 = West
+```direction = 0   0 = North, 1 = East, 2 = South, 3 = West```
 
 Create a turtle object
 robot = turtle.Turtle()
