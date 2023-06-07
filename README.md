@@ -39,33 +39,33 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-<sentences>      ::= <sentence>
-                   | <sentences> EOL <sentence>
+```<sentences>      ::= <sentence>```
+                   ```| <sentences> EOL <sentence>```
 
-<sentence>       ::= <subject> <polite_word> <instructions>
+```<sentence>       ::= <subject> <polite_word> <instructions>```
 
-<instructions>   ::= <instruction>
-                   | <instruction> <union> <instructions>
+```<instructions>   ::= <instruction>```
+                   ```| <instruction> <union> <instructions>```
 
-<union>          ::= COMMA AND THEN
-                   | COMMA AND
-                   | COMMA THEN
-                   | COMMA
-                   | AND THEN
-                   | THEN
-                   | AND
+```<union>          ::= COMMA AND THEN```
+                   ```| COMMA AND```
+                   ```| COMMA THEN```
+                   ```| COMMA```
+                   ```| AND THEN```
+                   ```| THEN```
+                   ```| AND```
 
-<instruction>    ::= <move_action> <length> <move_unit> <move_adverb>
-                   | <turn_action> <length> <turn_unit> <turn_adverb>
-                   | <move_action> <length> <move_unit>
-                   | <turn_action> <length> <turn_unit>
+```<instruction>    ::= <move_action> <length> <move_unit> <move_adverb>```
+                   ```| <turn_action> <length> <turn_unit> <turn_adverb>```
+                   ```| <move_action> <length> <move_unit>```
+                   ```| <turn_action> <length> <turn_unit>```
 
-<length>         ::= NUMBER
-                   | DEGREES
+```<length>         ::= NUMBER```
+                   ```| DEGREES```
 
-<subject>        ::= Robot
+```<subject>        ::= Robot```
 
-<polite_word>    ::= please
+```<polite_word>    ::= please```
 
 ```<move_action>    ::= move```
                    ```| advance```
