@@ -77,4 +77,4 @@ Below is the grammar used in the robot programming language:
 
 ## Usage
 
-![Gif de gráfica de python](./graph.gif)
+![Gif de gráfica de python](./graph.py)
