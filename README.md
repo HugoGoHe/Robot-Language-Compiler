@@ -74,3 +74,5 @@ Below is the grammar used in the robot programming language:
 ```<MOVE_ADVERB>   ::= ahead```
 
 ```<TURN_ADVERB>   ::= to the right | clockwise```
+
+![Gif de gráfica de python](./graph.gif)
