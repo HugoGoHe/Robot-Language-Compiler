@@ -75,4 +75,4 @@ Below is the grammar used in the robot programming language:
 
 ```<TURN_ADVERB>   ::= to the right | clockwise```
 
-![Gif de gráfica de python](./graph.gif)
+![Gif de gráfica de python](graph.gif)
