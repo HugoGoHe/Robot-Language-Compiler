@@ -83,17 +83,17 @@ import os
 INPUT_FILE_PATH = "test.txt"
 OUTPUT_FILE_PATH = "output.asm"
 
-# Create a turtle screen
+Create a turtle screen
 screen = turtle.Screen()
 
-# Set up the screen size and coordinates
+Set up the screen size and coordinates
 screen.setup(width=600, height=600)
 screen.setworldcoordinates(0, 0, 10, 10)
 
-#Control variables
+Control variables
 direction = 0   # 0 = North, 1 = East, 2 = South, 3 = West
 
-# Create a turtle object
+Create a turtle object
 robot = turtle.Turtle()
 robot.speed(0)
 robot.pensize(1)
@@ -159,14 +159,14 @@ def instructions():
     read_file.close()
 
 def main():
-    # Compile lex and yacc and get output file
+    Compile lex and yacc and get output file
     lex_and_yacc()
-    # Call the draw_grid function to draw the grid
+    Call the draw_grid function to draw the grid
     draw_grid()
     robot.speed(2)  
     instructions()
     print(robot.xcor(), robot.ycor())
-    # Exit on click
+    Exit on click
     turtle.exitonclick()
 
 if __name__ == "__main__":
