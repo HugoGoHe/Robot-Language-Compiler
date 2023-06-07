@@ -39,41 +39,66 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-```<SENTENCES>     ::= <SENTENCE> <SENTENCES> | <SENTENCE>```
+<sentences>      ::= <sentence>
+                   | <sentences> EOL <sentence>
 
-```<SENTENCE>      ::= <SUBJECT> <POLITE WORD> <INSTRUCTIONS> | <POLITE WORD> <SUBJECT> <INSTRUCTIONS>```
+<sentence>       ::= <subject> <polite_word> <instructions>
 
-```<INSTRUCTIONS>  ::= <INSTRUCTION> | <INSTRUCTION> <UNION> <INSTRUCTIONS>```
+<instructions>   ::= <instruction>
+                   | <instruction> <union> <instructions>
 
-```<INSTRUCTION>   ::= <MOVE_ACTION> <NUMBER> <MOVE_UNIT> <MOVE_ADVERB> | <TURN_ACTION> <DEGREES> <TURN_UNIT> <TURN_ADVERB> | <MOVE_ACTION> <NUMBER> <MOVE_UNIT> | <TURN_ACTION> <DEGREES> <TURN_UNIT>```
+<union>          ::= COMMA AND THEN
+                   | COMMA AND
+                   | COMMA THEN
+                   | COMMA
+                   | AND THEN
+                   | THEN
+                   | AND
 
-```<SUBJECT>       ::= Robot```
+<instruction>    ::= <move_action> <length> <move_unit> <move_adverb>
+                   | <turn_action> <length> <turn_unit> <turn_adverb>
+                   | <move_action> <length> <move_unit>
+                   | <turn_action> <length> <turn_unit>
 
-```<POLITE WORD>   ::= please```
+<length>         ::= NUMBER
+                   | DEGREES
 
-```<COMMA>         ::= ,```
+<subject>        ::= Robot
 
-```<AND>           ::= and```
+<polite_word>    ::= please
 
-```<THEN>          ::= then```
+```<move_action>    ::= move```
+                   ```| advance```
+                   ```| travel```
+                   ```| go```
+                   ```| proceed```
 
-```<UNION>         ::= COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
+```<turn_action>    ::= turn```
+                   ```| rotate```
+                   ```| spin```
+                   ```| pivot```
+                   ```| twist```
+                   ```| shift```
 
-```<NUMBER>        ::= 1|2|3|4|5|6|7|8|9```
+```<move_unit>      ::= blocks```
+                   ```| steps```
 
-```<DEGREES>       ::= 90|180|270|360```
+```<turn_unit>      ::= degrees```
 
-```<MOVE_ACTION>   ::= move | advance | travel | go | proceed```
+```<move_adverb>    ::= ahead```
+                   ```| forward```
+                   ```| onward```
+                   ```| straight```
 
-```<TURN_ACTION>   ::= turn | rotate | spin | pivot | twist | shift```
+```<turn_adverb>    ::= to the right```
+                   ```| right```
+                   ```| clockwise```
+                   ```| to the east```
+                   ```| toward the right```
 
-```<MOVE_UNIT>     ::= blocks | steps```
+```<NUMBER>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9```
 
-```<TURN_UNIT>     ::= degrees```
-
-```<MOVE_ADVERB>   ::= ahead```
-
-```<TURN_ADVERB>   ::= to the right | clockwise```
+```<EOL>            ::= \n```
 
 ## Model
 <img src="graph.gif" alt="Gif de gráfica de Python" width="600">
