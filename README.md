@@ -76,5 +76,4 @@ Below is the grammar used in the robot programming language:
 ```<TURN_ADVERB>   ::= to the right | clockwise```
 
 ## Model
-
 ![Gif de gráfica de Python](graph.gif)
