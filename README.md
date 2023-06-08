@@ -32,6 +32,7 @@ The programming language used to control the robot must be polite and follow cer
     "Robot moves 2 blocks quickly."
     "Move 2 blocks right now."
     "Robot 2 blocks moves."
+    "robot, please move 2 blocks and turn 180 degrees"
     "Moves Robot 2 blocks and turn 89 degrees."
     "Move 2 blocks ahead, then turn 90 degrees."
     "Robot, please move 2 blocks quickly and then turn."
