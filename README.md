@@ -27,6 +27,7 @@ The programming language used to control the robot must be polite and follow cer
 
 ### Examples of invalid sentences:
 
+    "Robot move 2 blocks"
     "Robot moves 2 blocks."
     "Robot moves 2 blocks quickly."
     "Move 2 blocks right now."
