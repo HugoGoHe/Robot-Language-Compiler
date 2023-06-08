@@ -41,73 +41,33 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-```<sentences>      ::= <sentence>```
-                   ```| <sentences> EOL <sentence>```
+```<sentences>      ::= <sentence> | <sentences> EOL <sentence>```
 
 ```<sentence>       ::= <subject> <polite_word> <instructions>```
 
-```<instructions>   ::= <instruction>```
-                   ```| <instruction> <union> <instructions>```
+```<instructions>   ::= <instruction> | <instruction> <union> <instructions>```
 
-```<union>          ::= COMMA AND THEN```
-                   ```| COMMA AND```
-                   ```| COMMA THEN```
-                   ```| COMMA```
-                   ```| AND THEN```
-                   ```| THEN```
-                   ```| AND```
+```<union>          ::= COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
 
-```<instruction>    ::= <move_action> <length> <move_unit> <move_adverb>```
-                   ```| <turn_action> <length> <turn_unit> <turn_adverb>```
-                   ```| <move_action> <length> <move_unit>```
-                   ```| <turn_action> <length> <turn_unit>```
+```<instruction>    ::= <move_action> <length> <move_unit> <move_adverb> | <turn_action> <length> <turn_unit> <turn_adverb> | <move_action> <length> <move_unit> | <turn_action> <length> <turn_unit>```
 
-```<length>         ::= NUMBER```
-                   ```| DEGREES```
+```<length>         ::= NUMBER | NUMBER DEGREES```
 
-```<subject>        ::= Robot```
-                    ```| Rob```
-                    ```| Turtle```
+```<subject>        ::= Robot | Rob | Turtle```
 
-```<polite_word>    ::= please```
-                    ```| kindly```
+```<polite_word>    ::= please | kindly```
 
-```<move_action>    ::= move```
-                   ```| advance```
-                   ```| travel```
-                   ```| go```
-                   ```| proceed```
+```<move_action>    ::= move | advance | travel | go | proceed```
 
-```<turn_action>    ::= turn```
-                   ```| rotate```
-                   ```| spin```
-                   ```| pivot```
-                   ```| twist```
-                   ```| shift```
+```<turn_action>    ::= turn | rotate | spin | pivot | twist | shift```
 
-```<move_unit>      ::= blocks```
-                   ```| block```
-                   ```| steps```
-                   ```| step```
-                   ```| units```
-                   ```| unit```
-                   ```| paces```
-                   ```| pace```
-                   ```| strides```
-                   ```| stride```
+```<move_unit>      ::= blocks | block | steps | step | units | unit | paces | pace | strides | stride```
 
 ```<turn_unit>      ::= degrees```
 
-```<move_adverb>    ::= ahead```
-                   ```| forward```
-                   ```| onward```
-                   ```| straight```
+```<move_adverb>    ::= ahead | forward | onward | straight```
 
-```<turn_adverb>    ::= to the right```
-                   ```| right```
-                   ```| clockwise```
-                   ```| to the east```
-                   ```| toward the right```
+```<turn_adverb>    ::= to the right | right | clockwise | to the east | toward the right```
 
 ```<NUMBER>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9```
 
