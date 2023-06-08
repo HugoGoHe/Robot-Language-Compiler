@@ -10,7 +10,7 @@ The compiler ensures that the instructions are valid and polite, and it displays
 
 ## Robot Constraints
 
-    Only 2 supported instructions: MOV and TURN.
+    Only 2 supported instructions: MOVE and TURN.
     The field on which the robot moves is a 2-D square matrix of 10 blocks implemented in Python.
     If the instruction leads the robot out of the boundaries of the matrix, the CPU should return an illegal instruction error.
 
