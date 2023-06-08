@@ -73,6 +73,9 @@ Below is the grammar used in the robot programming language:
 
 ```<EOL>            ::= \n```
 
+## Graphviz
+<img src="graphviz.png" alt="Imagen del diagrama" width="1200">
+
 ## Model
 <img src="graph.gif" alt="Gif de gráfica de Python" width="600">
 
