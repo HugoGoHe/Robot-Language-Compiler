@@ -65,6 +65,8 @@ Below is the grammar used in the robot programming language:
                    ```| DEGREES```
 
 ```<subject>        ::= Robot```
+                    ```| Rob```
+                    ```| Turtle```
 
 ```<polite_word>    ::= please```
                     ```| kindly```
@@ -83,7 +85,15 @@ Below is the grammar used in the robot programming language:
                    ```| shift```
 
 ```<move_unit>      ::= blocks```
+                   ```| block```
                    ```| steps```
+                   ```| step```
+                   ```| units```
+                   ```| unit```
+                   ```| paces```
+                   ```| pace```
+                   ```| strides```
+                   ```| stride```
 
 ```<turn_unit>      ::= degrees```
 
