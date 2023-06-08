@@ -66,6 +66,7 @@ Below is the grammar used in the robot programming language:
 ```<subject>        ::= Robot```
 
 ```<polite_word>    ::= please```
+                    ```| kindly```
 
 ```<move_action>    ::= move```
                    ```| advance```
