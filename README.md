@@ -63,15 +63,16 @@ Below is the grammar used in the robot programming language:
          | AND
 
 
-        <instruction>: <MOVE_ACTION> <lenght> <MOVE_UNIT> <MOVE_ADVERB>   
-            | <MOVE_ACTION>  <lenght> <MOVE_UNIT>                      
-            | <TURN_ACTION> <lenght> <TURN_UNIT> <TURN_ADVERB>          
-            | <TURN_ACTION> <lenght> <TURN_UNIT>                    
+        <instruction>: <MOVE_ACTION> <lenght_number> <MOVE_UNIT> <MOVE_ADVERB>   
+            | <MOVE_ACTION>  <lenght_number> <MOVE_UNIT>                      
+            | <TURN_ACTION> <lenght_degrees> <TURN_UNIT> <TURN_ADVERB>          
+            | <TURN_ACTION> <lenght_degrees> <TURN_UNIT>                    
         ;
 
-        lenght: NUMBER 
-            | DEGREES 
+        lenght_number: NUMBER 
         ;
+        
+        lenght_degrees: DEGREES;
 
         Robot |
         Rob |
