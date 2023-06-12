@@ -19,22 +19,23 @@ The compiler ensures that the instructions are valid and polite, and it displays
 The programming language used to control the robot must be polite and follow certain grammar rules. Here are some examples of valid and invalid sentences:
 ### Examples of valid sentences:
 
-    "Robot, please move 2 blocks ahead."
-    "Robot, please move 3 blocks ahead and then turn 90 degrees. Then, move 2 blocks."
-    "Robot, kindly turn 90 degrees and then move 2 steps, and then turn 270 degrees to the right."
-    "Robot, please move 3 blocks ahead, then turn 180 degrees to the right, and finally move 2 steps."
+    Robot kindly turn 270 degrees and then move 7 steps, and then turn 90 degrees to the right
+    Robot please move 9 steps 
+    please Robot turn 90 degrees to the right and move 1 blocks and then turn 90 degrees, then move 5 steps 
+    Robot kindly turn 270 degrees clockwise and move 4 steps ahead and move 2 steps ahead
+
 
 ### Examples of invalid sentences:
 
-    "Robot move 2 blocks"
-    "Robot moves 2 blocks."
-    "Robot moves 2 blocks quickly."
-    "Move 2 blocks right now."
-    "Robot 2 blocks moves."
-    "robot, please move 2 blocks and turn 180 degrees"
-    "Moves Robot 2 blocks and turn 89 degrees."
-    "Move 2 blocks ahead, then turn 90 degrees."
-    "Robot, please move 2 blocks quickly and then turn."
+    Robot move 2 blocks
+    Robot moves 2 blocks.
+    Robot moves 2 blocks quickly.
+    Move 2 blocks right now.
+    Robot 2 blocks moves.
+    robot, please move 2 blocks and turn 180 degrees
+    Moves Robot 2 blocks and turn 89 degrees.
+    Move 2 blocks ahead, then turn 90 degrees.
+    Robot, please move 2 blocks quickly and then turn.
 
 ## Grammar
 
