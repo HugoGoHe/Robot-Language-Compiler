@@ -11,7 +11,9 @@ Rob |
 Turtle {return SUBJECT;}
 
 please |
-kindly {return POLITE_WORD;}
+kindly |
+Please |
+Kindly {return POLITE_WORD;}
 
 ,            { return COMMA; }
 and          { return AND; }
