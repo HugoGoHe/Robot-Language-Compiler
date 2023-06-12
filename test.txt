@@ -1,4 +1,4 @@
 Robot kindly turn 270 degrees and then move 7 steps, and then turn 90 degrees to the right
 Robot please move 9 steps 
-please Robot turn 90 degrees to the right and move 1 blocks and then turn 90 degrees, then move 5 steps 
-Robot kindly turn 270 degrees clockwise and move 4 steps ahead and move 7 steps ahead
+Please Robot turn 90 degrees to the right and move 1 blocks and then turn 90 degrees, then move 5 steps 
+Robot kindly turn 270 degrees clockwise and move 4 steps ahead and move 2 steps ahead
