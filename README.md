@@ -4,7 +4,7 @@ This is the README file for the Robot-Language-Compiler project. Below, you will
 
 ## Project Description
 
-The Robot-Language-Compiler project focuses on developing a compiler for a programming language designed to control a robot on a two-dimensional field. The robot has two supported instructions: MOV (move), TURN and DIGIT. The field on which the robot will move is a 2-D square matrix of 10 blocks implemented in Python.
+The Robot-Language-Compiler project focuses on developing a compiler for a programming language designed to control a robot on a two-dimensional field. The robot has three supported instructions: MOV (move), TURN and DIGIT. The field on which the robot will move is a 2-D square matrix of 10 blocks implemented in Python.
 
 The compiler ensures that the instructions are valid and polite, and it displays an error message if the robot goes beyond the boundaries of the matrix.
 
