@@ -136,7 +136,7 @@ Below is the grammar used in the robot programming language:
         EOL: " "
 
 ## Graphviz
-<img src="graphviz_grammar.png" alt="Imagen del diagrama" width="1200">
+<img src="graphviz_compiler.png" alt="Imagen del diagrama" width="1200">
 
 ## Model
 <img src="graph.gif" alt="Gif de gráfica de Python" width="600">
