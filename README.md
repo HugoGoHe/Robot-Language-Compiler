@@ -41,37 +41,99 @@ The programming language used to control the robot must be polite and follow cer
 
 Below is the grammar used in the robot programming language:
 
-```<sentences>      ::= <sentence> | <sentences> EOL <sentence>```
+    <sentences>: <sentence>                 
+         | <sentences> EOL <sentences>
+         | <sentences> EOL
+         ;
 
-```<sentence>       ::= <subject> <polite_word> <instructions>```
+        <sentence>: <SUBJECT> <POLITE_WORD> <instructions>	
+                | <POLITE_WORD> <SUBJECT> <instructions>
+        ;
 
-```<instructions>   ::= <instruction> | <instruction> <union> <instructions>```
+        <instructions>: <instruction >
+         | <instruction> <union> <instructions>
+        ;
 
-```<union>          ::= COMMA AND THEN | COMMA AND | COMMA THEN | COMMA | AND THEN | THEN | AND```
+        <union>: COMMA AND THEN 
+         | COMMA AND
+         | COMMA THEN
+         | COMMA
+         | AND THEN
+         | THEN
+         | AND
 
-```<instruction>    ::= <move_action> <length> <move_unit> <move_adverb> | <turn_action> <length> <turn_unit> <turn_adverb> | <move_action> <length> <move_unit> | <turn_action> <length> <turn_unit>```
 
-```<length>         ::= NUMBER | NUMBER DEGREES```
+        <instruction>: <MOVE_ACTION> <lenght> <MOVE_UNIT> <MOVE_ADVERB>   
+            | <MOVE_ACTION>  <lenght> <MOVE_UNIT>                      
+            | <TURN_ACTION> <lenght> <TURN_UNIT> <TURN_ADVERB>          
+            | <TURN_ACTION> <lenght> <TURN_UNIT>                    
+        ;
 
-```<subject>        ::= Robot | Rob | Turtle```
+        lenght: NUMBER 
+            | DEGREES 
+        ;
 
-```<polite_word>    ::= please | kindly```
+        Robot |
+        Rob |
+        Turtle {return SUBJECT;}
 
-```<move_action>    ::= move | advance | travel | go | proceed```
+        please |
+        kindly |
+        Please |
+        Kindly {return POLITE_WORD;}
 
-```<turn_action>    ::= turn | rotate | spin | pivot | twist | shift```
+        ,            { return COMMA; }
+        and          { return AND; }
+        then         { return THEN; }
 
-```<move_unit>      ::= blocks | block | steps | step | units | unit | paces | pace | strides | stride```
 
-```<turn_unit>      ::= degrees```
+        NUMBER:[0-9]    
+        DEGREES: (90|180|270|360)   
 
-```<move_adverb>    ::= ahead | forward | onward | straight```
+        MOVE_ACTION
+        move |
+        advance |
+        travel |
+        go |
+        proceed				
 
-```<turn_adverb>    ::= to the right | right | clockwise | to the east | toward the right```
+        TURN_ACTION:
+        turn |
+        rotate |
+        spin |
+        pivot |
+        twist |
+        shift 	{
 
-```<NUMBER>         ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9```
+        MOVE_UNIT:
+        blocks |
+        block |
+        steps |
+        step |
+        units |
+        unit |
+        paces |
+        pace |
+        strides |
+        stride 
 
-```<EOL>            ::= \n```
+        TURN_UNIT:
+        degrees 
+
+        MOVE_ADVERB:
+        ahead |
+        forward |
+        onward |
+        straight 
+
+        TURN_ADVERB: 
+        "to the right" |
+        right |
+        clockwise |
+        "to the east" |
+        "toward the right" 
+
+        EOL: " "
 
 ## Graphviz
 <img src="graphviz_grammar.png" alt="Imagen del diagrama" width="1200">
