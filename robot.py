@@ -68,14 +68,14 @@ def lex_and_yacc():
     os.system("cc lex.yy.c y.tab.c -o robot.exe")
     os.system("./robot.exe " + INPUT_FILE_PATH + " > " + OUTPUT_FILE_PATH)
 
-def instructions():
-    actions = {"MOV": move_foward, "TURN": turn_right}
-    read_file = open(OUTPUT_FILE_PATH, "r")
+def instructions(output_file, move_function=move_foward, turn_function=turn_right):
+    actions_dictionary = {"MOV": move_function, "TURN": turn_function}
+    read_file = open(output_file, "r")
     for line in read_file:
         if line[0] == "M":
-            actions[line[0:3]](int(line[4:-1]))
+            actions_dictionary[line[0:3]](int(line[4:-1]))
         elif line[0] == "T":
-            actions[line[0:4]](int(line[5:-1]))
+            actions_dictionary[line[0:4]](int(line[5:-1]))
         print(line)
     read_file.close()
 
@@ -85,7 +85,7 @@ def main():
     # Call the draw_grid function to draw the grid
     draw_grid()
     robot.speed(2)  
-    instructions()
+    instructions(OUTPUT_FILE_PATH)
     print(robot.xcor(), robot.ycor())
     # Exit on click
     turtle.exitonclick()
